@@ -2,7 +2,6 @@
   "name": "server",
   "version": "0.0.1",
   "main": "index.js",
-  "type": "module",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "^1.4.5",
@@ -11,5 +10,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.6",
     "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "start": "babel-node --root-mode upward index.js"
   }
 }

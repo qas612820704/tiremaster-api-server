@@ -13,9 +13,15 @@ async function disconnectToDB() {
 
 yargs
   .middleware(connectToDB)
-  .command('get <username>', 'Get user', () => { }, async argv => {
+  .command('get [username]', 'Get user', () => { }, async argv => {
+    if (argv.all) {
+      const users = await User.find({});
+      console.log(users);
+      return;
+    }
+
     const user = await User.findOne({ username: argv.username });
-    console.log('user', user);
+    console.log(user);
   })
   .command('add <username> <password> <name>', 'Create user', () => { }, async argv => {
     const user = new User({
@@ -25,6 +31,16 @@ yargs
     });
 
     await user.save();
+  })
+  .command('delete [username]', 'Delete User', () => { }, async argv => {
+    if (argv.all) {
+      await User.deleteMany({});
+      return;
+    }
+
+    await User.deleteOne({
+      username: argv.username,
+    });
   })
   .onFinishCommand(disconnectToDB)
   .argv;

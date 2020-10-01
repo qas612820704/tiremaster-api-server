@@ -9,9 +9,11 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.10.6",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "yargs": "^16.0.3"
   },
   "scripts": {
-    "start": "babel-node --root-mode upward index.js"
+    "start": "babel-node --root-mode upward index.js",
+    "tools:user": "babel-node --root-mode upward tools/user.js"
   }
 }

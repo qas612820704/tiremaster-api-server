@@ -1,12 +1,14 @@
 import { model, Schema } from 'mongoose';
 import { hash } from 'bcrypt';
 
-const User = new Schema({
+export const schema = {
   username: String,
   password: String,
 
   name: String,
-})
+};
+
+const User = new Schema(schema);
 
 User.pre('save', async function () {
   const hashedPassword = await hash(this.password, 10);

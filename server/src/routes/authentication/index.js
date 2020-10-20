@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import { Router } from 'express';
 import { compare } from 'bcrypt';
-import User from '../../data/models/User';
+import { User } from '@tiremaster/models';
 
 const router = Router();
 

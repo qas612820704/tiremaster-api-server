@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken';
-import User from '../../data/models/User';
+import { User } from '@tiremaster/models';
 
 export default async function verifyToken(req, res, next) {
   const { token } = req.cookies;

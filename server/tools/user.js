@@ -1,14 +1,11 @@
 import yargs from 'yargs';
-import mongoose from 'mongoose';
-
-import connection from '../src/data/connection';
-import User from '../src/data/models/User';
+import { connect, disconnect, User } from '@tiremaster/models';
 
 async function connectToDB() {
-  await connection;
+  await connect();
 }
 async function disconnectToDB() {
-  await mongoose.connection.close();
+  await disconnect();
 }
 
 yargs

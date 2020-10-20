@@ -1,0 +1,17 @@
+{
+  "name": "@tiremaster/models",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "mongoose": "^5.10.8"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist --root-mode upward --ignore \"**/__tests__\"",
+    "watch": "yarn build --watch"
+  }
+}
